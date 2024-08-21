@@ -1,6 +1,222 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-field-select {
+	position: relative;
+	.popup-content-block {
+		display: none;
+		position: absolute;
+		top: 0;left: 0;right: 0;
+		z-index: 20;
+		padding: 50px 0 10px 0;
+		border-radius: 25px;
+		background: var(--clr-bg);
+		border: 1px solid #ffffff03;
+	}
+	.popup-form-wrap {
+		padding: 0 20px 5px 20px;
+		width: 100%;
+		flex-shrink: 0;
+		.form-input {
+			&:not(:hover, :focus) {
+				border-color: #ffffff10;
+			}
+		}
+	}
+	.popup-menu-wrap {
+		max-height: 200px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			height: 4px;
+			width: 4px;
+			background-color: var(--clr-light);
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--clr-att);
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: var(--clr-att);
+		}
+		&::-webkit-scrollbar-button:vertical:start:decrement {
+			background-color: transparent;
+			width: 0;
+			height: 0;
+		}
+		&::-webkit-scrollbar-button:vertical:end:increment {
+			background-color: transparent;
+			width: 0;
+			height: 0;
+		}
+		&::-webkit-scrollbar-button:horizontal:start:decrement {
+			background-color: transparent;
+			width: 0;
+			height: 0;
+		}
+		&::-webkit-scrollbar-button:horizontal:end:increment {
+			background-color: transparent;
+			width: 0;
+			height: 0;
+		}
+	}
+	.btn-popup-select {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		color: var(--clr-base);
+		position: relative;
+		padding-right: 50px;
+		&:before {
+			content: "";
+			display: block;
+			width: 14px;;
+			height: 14px;;
+			position: absolute;
+			background: url(../img/icons/arrow-toggle.svg) center no-repeat;
+			background-size: 100% auto;
+			top: 50%;right: 24px;
+			margin-top: -7px;
+			transition: all ease 0.2s;
+			z-index: 2;
+			rotate: 0;
+			z-index: 21;
+		}
+		&.active {
+			border-color: transparent;
+			background-color: transparent;
+			&:before {
+				rotate: 180deg;
+			}
+		}
+		.button-title, .button-ico {
+			z-index: 21;
+			position: relative;
+		}
+	}
+	.btn-select {
+		display: flex;
+		align-items: center;
+		padding: 10px 3rem 10px 3rem;
+		color: var(--clr-base);
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;left: 3rem;right: 3rem;
+			height: 1px;
+			background: #ffffff10;
+		}
+		&:hover, &.active {
+			background-color: #ffffff05;;
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+	.button-ico {
+		width: 20px;height: 20px;
+		flex-shrink: 0;
+	}
+	.button-title {
+		display: block;
+		padding-left: 10px;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: bold;
+		flex: 1;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+.frm-field-label {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	border-radius: 25px;
+	border: 1px solid var(--clr-border-light);
+	padding: 0 24px;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--clr-base-light);
+	max-width: 100%;
+	.field-title {
+		color: #fff;
+		margin: 0 10px 0 0;
+		font-size: 12px;
+		font-weight: bold;
+		flex-shrink: 0;
+	}
+	.field-value {
+		display: block;
+		flex-shrink: 0;
+	}
+	&:hover {
+		color: var(--clr-base-light);
+	}
+}
+.frm-field-password {
+	position: relative;
+	.button-view-toggle {
+		position: absolute;
+		top: 50%;right: 40px;
+		margin: -20px -20px 0 0;
+		z-index: 2;
+	}
+	&:hover {
+		.btn-action-ico {
+			&.ico-password {
+				&:before, &:after {
+					filter: none;
+				}
+			}
+		}
+	}
+}
+.frm-field-input-main {
+	display: block;
+	position: relative;
+	.form-input {
+		padding-top: 2.5rem;
+	}
+	.field-label {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;right: 0;
+		font-size: 12px;
+		line-height: 20px;
+		color: var(--clr-base-light);
+		z-index: 2;
+		pointer-events: none;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding: 7px 20px 0 3rem;
+	}
+}
+.frm-field-link {
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: bold;
+}
+.frm-field-info {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 24px;
+	color: var(--clr-base);
+	.frm-ico {
+		width: 30px;height: 30px;
+		flex-shrink: 0;
+	}
+	.field-info-title {
+		padding-left: 3rem;
+	}
+	a {
+		font-size: 16px;
+	}
+}
 .frm-field-search {
 	position: relative;
 	&:hover, &:has(:focus) {
@@ -92,6 +308,13 @@
 .frm-field {
     display: block;
     width: 100%;
+	.field-input-title {
+		display: block;
+		font-size: 12px;
+		line-height: 20px;
+		color: var(--clr-base-light);
+		margin-bottom: 9px;
+	}
 }
 .frm-select {
 	position: relative;

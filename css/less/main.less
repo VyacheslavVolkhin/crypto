@@ -267,6 +267,55 @@ h6, .h6-title {
 	background:  url(../img/main/bg.png) center 86px/auto;
 	padding: 14px;
 }
+table {
+	width: 100%;
+	font-size: 12px;
+	line-height: (16/12);
+	text-align: left;
+	color: var(--clr-base);
+	thead {
+		th, td {
+			font-size: 12px;
+			line-height: 24px;
+			letter-spacing: 0.6px;
+			text-transform: uppercase;
+			text-align: left;
+			font-weight: bold;
+			color: var(--clr-att);
+			padding-top: 10px;
+			padding-bottom: 10px;
+			background: #ffffff04;
+			border-bottom: none;
+		}
+	}
+	th, td {
+		text-align: left;
+		font-weight: 400;
+		border: none;
+		border-bottom: 1px solid var(--clr-border-light);
+		vertical-align: middle;
+		padding: 12px 24px 12px 0;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	.td-text-line {
+		display: block;
+		position: relative;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 250px;
+		width: 100%;
+		font-weight: bold;
+	}
+	.btn-action-unit {
+		&:before {
+			display: none;
+		}
+	}
+}
 @media (max-width: 1299px) {
     :root {
         font-size: 9.5px;
