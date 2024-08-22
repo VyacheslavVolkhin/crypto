@@ -1,6 +1,42 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-field-attention-text {
+	font-size: 14px;
+	line-height: 20px;
+	padding: 2rem 3rem;
+	border-radius: 2rem;
+	background: #ffffff04;
+}
+.frm-info-text {
+	font-size: 14px;
+	line-height: 24px;
+	color: var(--clr-att);
+	display: block;
+	position: relative;
+	padding-left: 22px;
+	&:before {
+		content: "";
+		display: block;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		background: url(../img/icons/info.svg) center no-repeat;
+		background-size: 100% auto;
+		top: 12px;left: 8px;
+		margin: -8px 0 0 -8px;
+	}
+}
+.frm-field-value {
+	display: block;
+	position: relative;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	background-color: var(--clr-bg);
+	border-color: #ffffff03;
+}
 .frm-field-select {
 	position: relative;
 	.popup-content-block {

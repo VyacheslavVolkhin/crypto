@@ -254,6 +254,35 @@
 	font-weight: bold;
 	color: #fff;
 }
+.elm-timer {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	letter-spacing: normal;
+	.btn.timer-counter {
+		width: 60px;height: 60px;
+		border-radius: 50%;
+		padding: 0;
+		min-width: 0;
+		flex-shrink: 0;
+		font-size: 16px;
+		font-weight: bold;
+		letter-spacing: 0.8px;
+		position: relative;
+		top: auto;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		max-width: 100%;
+	}
+	.timer-title {
+		flex: 1;
+		display: block;
+		padding-left: (20/16em);
+	}
+}
 @media (max-width: 1023px) {
 	.item-tile-new {
 		.tile-info-wrap {

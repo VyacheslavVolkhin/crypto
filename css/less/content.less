@@ -1,6 +1,70 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.change-info-box {
+	margin-bottom: 3rem;
+	margin-left: -45px;
+	margin-right: -45px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-top: 10px;
+	.unit-info-wrap {
+		padding: 0 45px;
+		width: 50%;
+		flex-shrink: 0;
+		&:first-child {
+			text-align: right;
+			&:before {
+				content: "";
+				display: block;
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				background: url(../img/icons/change.svg) center no-repeat;
+				background-size: 100% auto;
+				top: 50%;left: 50%;
+				margin-left: -15px;
+				margin-top: -15px;
+			}
+		}
+	}
+	.btn-unit {
+		display: inline-flex;
+		max-width: 100%;
+		align-items: center;
+		font-size: 14px;
+		line-height: 20px;
+		color: var(--clr-base-light);
+		text-align: left;
+		.button-ico {
+			width: 4rem;height: 4rem;
+			flex-shrink: 0;
+			img {
+				width: 100%;
+			}
+		}
+		.button-title {
+			display: block;
+			padding-left: 12px;
+			flex: 1;
+		}
+		.button-name {
+			display: block;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: var(--clr-base);
+		}
+		.button-name, .button-info {
+			display: block;
+			position: relative;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
 .pagenav-box {
 	margin-top: 30px;
 	display: flex;
@@ -81,10 +145,29 @@
 	}
 }
 .lk-form-box {
+	.frm-action-wrap {
+		margin-top: 20px;
+		.frm-row {
+			margin: 0 -1rem;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.frm-field {
+			padding: 0 1rem;
+			margin: 0;
+			width: auto;
+		}
+	}
 	.frm-title-wrap {
 		margin-bottom: 15px;
 		font-size: 14px;
 		line-height: 24px;
+		&.title-center {
+			.elm-ico {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
 		&:not(:first-child) {
 			padding-top: 19px;
 			border-top: 1px solid var(--clr-border-light);
@@ -95,6 +178,9 @@
 			&:not(:last-child) {
 				margin-bottom: 6px;
 			}
+		}
+		.elm-ico {
+			margin-bottom: 16px;
 		}
 		.link-main {
 			font-size: 16px;
@@ -120,6 +206,9 @@
 		&:last-child {
 			margin-bottom: 0;
 		}
+		&.field-full {
+			max-width: 100%;
+		}
 	}
 	.field-line {
 		width: auto;
@@ -128,6 +217,10 @@
 	.field-half {
 		width: 50%;
 		max-width: 320px;
+	}
+	.field-space {
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 	.row-form {
 		align-items: flex-end;
@@ -141,6 +234,33 @@
 			}
 		}
 		&:last-child {
+		}
+	}
+	.row-form-center {
+		align-items: center;
+		.frm-row {
+		}
+	}
+	.form-inner {
+		.frm-field {
+			margin-bottom: 15px;
+		}
+	}
+	.row-info {
+		padding-top: 2px;
+		.frm-field {
+			font-size: 13px;
+			line-height: 18px;
+		}
+		.text-light {
+			color: var(--clr-base-light);
+			font-weight: 400;
+		}
+	}
+	.frm-info-text {
+		margin-bottom: 8px;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -351,9 +471,19 @@
 	margin-bottom: 4rem;
 	line-height: (28/18);
 	font-weight: bold;
+	.title-info-wrap {
+		font-size: 16px;
+		line-height: 22px;
+		text-transform: none;
+		font-weight: 400;
+	}
 	.page-title {
 		margin-bottom: 2.2rem;
 		color: var(--clr-att);
+	}
+	.title-light {
+		color: var(--clr-base);
+		display: inline;
 	}
 	p {
 		margin: 0;
@@ -500,6 +630,21 @@
 		.field-submit {
 			margin-top: 20px;
 		}
+		.frm-action-wrap {
+			.frm-row {
+				justify-content: center;
+				display: block;
+				text-align: center;
+				.frm-field {
+					width: 100%;
+					max-width: 100%;
+					margin-bottom: 10px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
 	}
 	.pagenav-box {
 		.pages-wrap {
@@ -563,6 +708,9 @@
 }
 @media (min-width: 1024px) {
 	.lk-form-box {
+		&.section-short {
+			max-width: 966px;
+		}
 		.frm-title-wrap {
 			position: relative;
 			&:has(.btn) {
@@ -577,7 +725,35 @@
 	}
 	.title-box {
 		position: relative;
-		&:has(.btn) {
+		&:has(.elm-timer) {
+			display: flex;
+			justify-content: space-between;
+			.page-title {
+				flex: 1;
+				max-width: 700px;
+			}
+			.elm-timer {
+				flex-shrink: 0;
+				width: 230px;
+				margin-left: 20px;
+				margin-bottom: 10px;
+			}
+		}
+		&:has(.title-info-wrap) {
+			display: flex;
+			justify-content: space-between;
+			.page-title {
+				flex: 1;
+			}
+			.title-info-wrap {
+				width: 30%;
+				flex-shrink: 0;
+				padding-left: 20px;
+				max-width: 340px;
+				text-align: right;
+			}
+		}
+		&:has(>.btn) {
 			padding: 0 200px;
 		}
 		.btn {
